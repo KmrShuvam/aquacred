@@ -31,6 +31,7 @@ export default function UploadPage() {
       } else {
         setStatus(`Error: ${result.message}`);
       }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       setStatus(`Submission failed: ${error.message}`);
     }

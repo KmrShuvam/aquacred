@@ -219,6 +219,7 @@ const contractABI = `[
 const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
 
 export default function DashboardPage() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [projects, setProjects] = useState<any>();
   const [loading, setLoading] = useState(true);
 

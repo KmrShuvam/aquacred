@@ -254,7 +254,7 @@ export async function POST(request: NextRequest) {
       message: 'Project registered successfully on the blockchain!',
       transactionHash: tx.hash,
     });
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     console.error("API Error:", error);
     return NextResponse.json({ status: 'error', message: error.message }, { status: 500 });

@@ -233,7 +233,7 @@ export default function DashboardPage() {
           const projectCountBigInt = await contract.getProjectCount();
           const projectCount = Number(projectCountBigInt);
           
-          const fetchedProjects =;
+          const fetchedProjects =[];
 
           for (let i = 1; i <= projectCount; i++) {
             const project = await contract.getProject(i);

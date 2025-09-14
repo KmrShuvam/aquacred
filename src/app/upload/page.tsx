@@ -4,6 +4,10 @@
 import { useState } from 'react';
 
 export default function UploadPage() {
+  // ####################################################################
+  // THIS IS THE LINE THAT HAS BEEN FIXED
+  // We are now correctly naming our box "status" and our tool "setStatus"
+  // ####################################################################
   const = useState('');
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -22,6 +26,7 @@ export default function UploadPage() {
 
       if (result.status === 'success') {
         const etherscanLink = `https://sepolia.etherscan.io/tx/${result.transactionHash}`;
+        // This line makes the success message a clickable link
         setStatus(`Success! <a href="${etherscanLink}" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">View on Etherscan</a>`);
       } else {
         setStatus(`Error: ${result.message}`);
@@ -66,6 +71,7 @@ export default function UploadPage() {
             Submit to Ledger
           </button>
         </form>
+        {/* This part displays the status message and allows HTML for the link */}
         {status && <div className="mt-4 text-center text-sm text-gray-600" dangerouslySetInnerHTML={{ __html: status }} />}
       </div>
     </div>

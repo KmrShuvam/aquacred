@@ -8,7 +8,7 @@ export default function UploadPage() {
   // THIS IS THE LINE THAT HAS BEEN FIXED
   // We are now correctly naming our box "status" and our tool "setStatus"
   // ####################################################################
-  const = useState('');
+  const [status, setStatus] = useState('');
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
